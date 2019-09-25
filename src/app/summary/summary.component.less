@@ -1,0 +1,87 @@
+@import "../variables.less";
+
+.summary {
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .summary-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: @fontSizeMedium;
+    font-weight: 500;
+
+    .timesheet-link {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: @colorAccent;
+    }
+  }
+
+  .summary-content-container {
+    box-sizing: border-box;
+    margin-top: 16px;
+    flex-grow: 1;
+    overflow-y: auto;
+
+    .summary-content {
+      .no-events {
+        font-size: @fontSizeMedium;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: @colorLightGrey;
+        padding: 8px;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: @fontSizeMedium;
+
+        .title {
+          display: flex;
+          align-items: center;
+
+          .title-icon {
+            margin-right: 6px;
+          }
+        }
+
+        .hours {
+          color: @colorGrey;
+        }
+      }
+
+      .section-content {
+        padding: 12px 0;
+
+        table {
+          font-size: @fontSizeSmall;
+          width: 100%;
+
+          th {
+            font-weight: 500;
+            color: @colorGrey;
+            padding: 4px;
+          }
+
+          td {
+            font-weight: 600;
+            padding: 2px 4px;
+          }
+
+          .align-left {
+            text-align: left;
+          }
+
+          .align-right {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}

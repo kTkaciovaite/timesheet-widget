@@ -1,0 +1,88 @@
+<div class="summary">
+  <div class="summary-header">
+    <div class="summary-title">{{ selectedDate.format('dddd DD.MM.YYYY') }}</div>
+    <a class="timesheet-link" routerLink="/timesheet">Go To Timesheet</a>
+  </div>
+  <div class="summary-content-container">
+    <div class="summary-content">
+      <div *ngIf="!hourEvents.length && !expenseEvents.length && !additionalHourEvents.length" class="no-events">
+        No events on this day
+      </div>
+      <div *ngIf="hourEvents.length">
+        <div class="section-header">
+          <div class="title">
+            <mat-icon svgIcon="clock" class="title-icon"></mat-icon>
+            Hours
+          </div>
+          <div class="hours">({{ workStartTime.format('HH:mm') }} - {{ workEndTime.format('HH:mm') }})</div>
+        </div>
+        <div class="section-content">
+          <table>
+            <thead>
+              <tr>
+                <th class="align-left">Type</th>
+                <th class="align-right">Duration</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let event of hourEvents">
+              <tr>
+                <td class="align-left">{{ event.eventType }}</td>
+                <td class="align-right">{{ getDuration(event.firstTaskStart, event.lastTaskEnd) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div *ngIf="expenseEvents.length">
+        <div class="section-header">
+          <div class="title">
+            <mat-icon svgIcon="money" class="title-icon"></mat-icon>
+            Expenses
+          </div>
+        </div>
+        <div class="section-content">
+          <table>
+            <thead>
+              <tr>
+                <th class="align-left">Type</th>
+                <th class="align-right">Quantity</th>
+                <th class="align-right">Total</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let event of expenseEvents">
+              <tr>
+                <td class="align-left">{{ event.eventType }}</td>
+                <td class="align-right">{{ event.quantity }}</td>
+                <td class="align-right">{{ event.quantity * event.price | number: '1.2-2' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div *ngIf="additionalHourEvents.length">
+        <div class="section-header">
+          <div class="title">
+            <mat-icon svgIcon="clock" class="title-icon"></mat-icon>
+            Additional Hours
+          </div>
+        </div>
+        <div class="section-content">
+          <table>
+            <thead>
+              <tr>
+                <th class="align-left">Type</th>
+                <th class="align-right">Amount</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let event of additionalHourEvents">
+              <tr>
+                <td class="align-left">{{ event.eventType }}</td>
+                <td class="align-right">{{ event.quantity }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

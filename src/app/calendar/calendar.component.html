@@ -1,0 +1,23 @@
+<div class="calendar">
+  <div class="calendar-header">
+    <span class="calendar-title">{{ selectedDate.format('MMMM YYYY') }}</span>
+    <span class="calendar-icon" (click)="selectToday()">
+      <mat-icon svgIcon="calendar-today"></mat-icon>
+      <span class="calendar-icon-text">{{ date.format('D') }}</span>
+    </span>
+  </div>
+  <div class="calendar-content-container">
+    <div class="calendar-content">
+      <div class="calendar-item {{ day.isWeekend ? 'weekend' : '' }}"
+        (click)="selectDate(day.date)" *ngFor="let day of days">
+
+        <div class="week-day">{{ day.date.format('ddd') }}</div>
+        <div class="day {{ day.isToday ? 'today' : '' }} {{ day.date.format('YYYY-MM-DD') === selectedDate.format('YYYY-MM-DD') ? 'selected' : '' }}">
+          {{ day.date.format('D') }}
+        </div>
+        <div class="hours-worked">{{ day.hoursWorked }}</div>
+        <div class="day-status status-{{ day.dayTaskStatus }}"></div>
+      </div>
+    </div>
+  </div>
+</div>

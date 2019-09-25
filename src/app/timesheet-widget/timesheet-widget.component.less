@@ -1,0 +1,23 @@
+@import "../variables.less";
+
+.timesheet-widget {
+  padding: 0;
+  max-width: 600px;
+  height: calc(100vh - 16px);
+  display: flex;
+  flex-direction: column;
+
+  .app-summary {
+    height: 100%;
+  }
+
+  .action-container {
+    padding: 20px 16px;
+    background-color: @colorLightGrey;
+
+    .action {
+      width: 100%;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,142 @@
+import { IGroupedEvent } from './event.service';
+
+export const mockedData: IGroupedEvent[] = [{
+  date: new Date('2019-09-20'),
+  events: [{
+    quantity: 0,
+    price: 0,
+    eventType: 'Arbeidstid',
+    isExpenseType: false,
+    isHoursEventType: true,
+    isAdditionalHoursEventType: false,
+    isWorkHour: true,
+    isApproved: false,
+    isRejected: false,
+    tasksCount: 1,
+    firstTaskStart: new Date('2019-09-20 8:00'),
+    lastTaskEnd: new Date('2019-09-20 15:30')
+  }, {
+    quantity: 0,
+    price: 0,
+    eventType: 'Overtid 50%',
+    isExpenseType: false,
+    isHoursEventType: true,
+    isAdditionalHoursEventType: false,
+    isWorkHour: true,
+    isApproved: false,
+    isRejected: true,
+    tasksCount: 1,
+    firstTaskStart: new Date('2019-09-20 15:30'),
+    lastTaskEnd: new Date('2019-09-20 16:30')
+  }, {
+    quantity: 2,
+    price: 567,
+    eventType: 'Liftleie dagpris',
+    isExpenseType: true,
+    isHoursEventType: false,
+    isAdditionalHoursEventType: false,
+    isWorkHour: false,
+    isApproved: false,
+    isRejected: false,
+    tasksCount: 0,
+    firstTaskStart: null,
+    lastTaskEnd: null
+  }],
+}, {
+  date: new Date('2019-09-23'),
+  events: [{
+    quantity: 0,
+    price: 0,
+    eventType: 'Arbeidstid',
+    isExpenseType: false,
+    isHoursEventType: true,
+    isAdditionalHoursEventType: false,
+    isWorkHour: true,
+    isApproved: true,
+    isRejected: false,
+    tasksCount: 1,
+    firstTaskStart: new Date('2019-09-20 8:00'),
+    lastTaskEnd: new Date('2019-09-20 15:30')
+  }, {
+    quantity: 0,
+    price: 0,
+    eventType: 'Overtid 50%',
+    isExpenseType: false,
+    isHoursEventType: true,
+    isAdditionalHoursEventType: false,
+    isWorkHour: true,
+    isApproved: true,
+    isRejected: false,
+    tasksCount: 1,
+    firstTaskStart: new Date('2019-09-20 15:30'),
+    lastTaskEnd: new Date('2019-09-20 16:30')
+  }, {
+    quantity: 2,
+    price: 567,
+    eventType: 'Liftleie dagpris',
+    isExpenseType: true,
+    isHoursEventType: false,
+    isAdditionalHoursEventType: false,
+    isWorkHour: false,
+    isApproved: true,
+    isRejected: false,
+    tasksCount: 0,
+    firstTaskStart: null,
+    lastTaskEnd: null
+  }, {
+    quantity: 2.5,
+    price: 0,
+    eventType: 'Liftleie timepris',
+    isExpenseType: false,
+    isHoursEventType: false,
+    isAdditionalHoursEventType: true,
+    isWorkHour: true,
+    isApproved: true,
+    isRejected: false,
+    tasksCount: 0,
+    firstTaskStart: null,
+    lastTaskEnd: null
+  }]
+}, {
+  date: new Date('2019-09-24'),
+  events: [{
+    quantity: 0,
+    price: 0,
+    eventType: 'Arbeidstid',
+    isExpenseType: false,
+    isHoursEventType: true,
+    isAdditionalHoursEventType: false,
+    isWorkHour: true,
+    isApproved: false,
+    isRejected: false,
+    tasksCount: 1,
+    firstTaskStart: new Date('2019-09-24 8:00'),
+    lastTaskEnd: new Date('2019-09-24 15:30')
+  }, {
+    quantity: 0,
+    price: 0,
+    eventType: 'Overtid 50%',
+    isExpenseType: false,
+    isHoursEventType: true,
+    isAdditionalHoursEventType: false,
+    isWorkHour: true,
+    isApproved: false,
+    isRejected: false,
+    tasksCount: 1,
+    firstTaskStart: new Date('2019-09-24 15:30'),
+    lastTaskEnd: new Date('2019-09-24 16:00')
+  }, {
+    quantity: 2,
+    price: 567,
+    eventType: 'Liftleie dagpris',
+    isExpenseType: true,
+    isHoursEventType: false,
+    isAdditionalHoursEventType: false,
+    isWorkHour: false,
+    isApproved: false,
+    isRejected: false,
+    tasksCount: 0,
+    firstTaskStart: null,
+    lastTaskEnd: null
+  }],
+}];
